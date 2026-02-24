@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Template 模板展示导航</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 { margin-bottom: 10px; color: var(--primary-color); }
+        
+        /* 搜索框样式 */
+        .search-container {
+            margin-bottom: 30px;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+        }
+        #searchBar {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: border-color 0.3s;
+        }
+        #searchBar:focus { border-color: var(--primary-color); }
+
+        /* 网格布局 */
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .card {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-main);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 60px;
+            font-weight: 500;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Web Template 导航</h1>
+        <p>共有 <span id="count">0</span> 个前端模板预览</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="输入关键词搜索模板..." onkeyup="filterTemplates()">
+    </div>
+
+    <div class="template-grid" id="templateGrid">
+        <a class="card" href="./Bootstrap模板/index.html">Bootstrap模板</a>
+        <a class="card" href="./Bootstrap首頁分布效果/index.html">Bootstrap首頁分布效果</a>
+        <a class="card" href="./CSS梅花飘落/index.html">CSS梅花飘落</a>
+        <a class="card" href="./Iphone3D特效/index.html">Iphone3D特效</a>
+        <a class="card" href="./Tags球型3D标签/index.html">Tags球型3D标签</a>
+        <a class="card" href="./agency/index.html">agency</a>
+        <a class="card" href="./boostrap主页/index.html">boostrap主页</a>
+        <a class="card" href="./qq旋风下载主页/index.html">qq旋风下载主页</a>
+        <a class="card" href="./zeem-web/index.html">zeem-web</a>
+        <a class="card" href="./万能五笔输入法主页/index.html">万能五笔输入法主页</a>
+        <a class="card" href="./个人主页/index.html">个人主页</a>
+        <a class="card" href="./个人主页_全部加载/index.html">个人主页_全部加载</a>
+        <a class="card" href="./个人博客_日历_点赞/index.html">个人博客_日历_点赞</a>
+        <a class="card" href="./主页_人物展示/index.html">主页_人物展示</a>
+        <a class="card" href="./主页_全屏切换/index.html">主页_全屏切换</a>
+        <a class="card" href="./主页_多种head和样式/index.html">主页_多种head和样式</a>
+        <a class="card" href="./主页_标签切换/index.html">主页_标签切换</a>
+        <a class="card" href="./主页_标签切换_毛玻璃/index.html">主页_标签切换_毛玻璃</a>
+        <a class="card" href="./主页_背景和鼠标反方向运动/index.html">背景和鼠标反方向运动</a>
+        <a class="card" href="./仿造Windoes桌面/index.html">仿造Windows桌面</a>
+        <a class="card" href="./侧边栏展开标签主页/index.html">侧边栏展开标签</a>
+        <a class="card" href="./元素周期表炫酷排列/index.html">元素周期表炫酷</a>
+        <a class="card" href="./分享到/index.html">分享到</a>
+        <a class="card" href="./动态三菱状物/index.html">动态三菱状物</a>
+        <a class="card" href="./各种图标曲线主页2/index.html">各种图标曲线2</a>
+        <a class="card" href="./各种图表曲线主页/index.html">各种图表曲线</a>
+        <a class="card" href="./商务主页/index.html">商务主页</a>
+        <a class="card" href="./图标大集合/index.html">图标大集合</a>
+        <a class="card" href="./图片斜着平移/index.html">图片斜着平移</a>
+        <a class="card" href="./图片集展示/index.html">图片集展示</a>
+        <a class="card" href="./左右蓝红菱形切换选择/index.html">红蓝菱形切换</a>
+        <a class="card" href="./微信主页/index.html">微信主页</a>
+        <a class="card" href="./快应主页/index.html">快应主页</a>
+        <a class="card" href="./恋爱记录网站/index.html">恋爱记录网站</a>
+        <a class="card" href="./悬浮方框例子/index.html">悬浮方框例子</a>
+        <a class="card" href="./手风琴人物介绍/index.html">手风琴人物介绍</a>
+        <a class="card" href="./时间线展示/index.html">时间线展示</a>
+        <a class="card" href="./校园活动_全屏切换/index.html">校园活动全屏</a>
+        <a class="card" href="./毛玻璃主页2/index.html">毛玻璃主页2</a>
+        <a class="card" href="./毛玻璃单张主页/index.html">毛玻璃单张</a>
+        <a class="card" href="./毛玻璃效果主页/index.html">毛玻璃效果</a>
+        <a class="card" href="./毛玻璃效果主页_全屏切换/index.html">毛玻璃全屏切换</a>
+        <a class="card" href="./毛玻璃背景_图片展示/index.html">毛玻璃图片展示</a>
+        <a class="card" href="./毛玻璃背景主页/index.html">毛玻璃背景主页</a>
+        <a class="card" href="./流体模拟/index.html">流体模拟</a>
+        <a class="card" href="./炫酷图片到博文切换/index.html">图片博文切换</a>
+        <a class="card" href="./炫酷文字云聚合消散和鼠标圆火焰/index.html">文字云与火焰</a>
+        <a class="card" href="./炫酷雨滴在玻璃上特效/index.html">雨滴玻璃特效</a>
+        <a class="card" href="./百度浏览器主页/index.html">百度浏览器主页</a>
+        <a class="card" href="./秀气主页/index.html">秀气主页</a>
+        <a class="card" href="./类淘宝侧选单/index.html">类淘宝侧选单</a>
+        <a class="card" href="./粉色主题标签切换/index.html">粉色主题标签</a>
+        <a class="card" href="./粉色毛玻璃主页_切换页面/index.html">粉色毛玻璃切换</a>
+        <a class="card" href="./粒子4个主页/index.html">粒子4个主页</a>
+        <a class="card" href="./粒子跟踪/index.html">粒子跟踪</a>
+        <a class="card" href="./粒子躲避/index.html">粒子躲避</a>
+        <a class="card" href="./背景水平移动_玻璃效果/index.html">背景移动玻璃</a>
+        <a class="card" href="./自动打字效果/index.html">自动打字效果</a>
+        <a class="card" href="./长主页/index.html">长主页</a>
+        <a class="card" href="./黑色主页_全屏切换/index.html">黑色全屏切换</a>
+        <a class="card" href="./鼠标在图片上的悬停特效/index.html">鼠标悬停特效</a>
+        <a class="card" href="./鼠标拉丝/index.html">鼠标拉丝</a>
+        </div>
+</div>
+
+<script>
+    // 初始化计数
+    const cards = document.querySelectorAll('.card');
+    document.getElementById('count').innerText = cards.length;
+
+    // 搜索过滤逻辑
+    function filterTemplates() {
+        const input = document.getElementById('searchBar').value.toLowerCase();
+        const grid = document.getElementById('templateGrid');
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            const text = card.textContent.toLowerCase();
+            if (text.includes(input)) {
+                card.classList.remove('hidden');
+                visibleCount++;
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+        document.getElementById('count').innerText = visibleCount;
+    }
+</script>
+
+</body>
+</html>
