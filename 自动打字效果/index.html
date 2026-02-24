@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>打字机</title>
+<script>
+function text(str){
+   var arr=[];
+   var text=document.getElementsByClassName("text")[0];
+   for(var i=0;i<str.length;i++){arr[i]=str[i];}
+   var p=document.createElement("p");
+   text.appendChild(p);
+   var index=0;
+   var obj=setInterval(function(){
+	   if(index<arr.length){
+	   var text=document.createTextNode(arr[index]);
+	   }
+	   p.appendChild(text);
+	   index++;
+	   },200);
+
+}
+window.onload=function(){
+  text("既然是要配合“**自动打字效果**”展示，那文章的节奏感一定要强，文字要像呼吸一样自然，还要带点“赛博感”或者“文艺范儿”，这样在大屏幕或网页上跳出来时才够高级。
+	   
+我为你准备了一篇关于**“数字生命与瞬间灵感”**的随笔，非常适合作为打字机效果的演示：
+
+## 这里的文字，正因你而跳动
+
+光标在深邃的黑夜里闪烁，那是**数字世界的脉搏**。
+
+你现在看到的每一个字符，都曾是一段静止的代码，直到你的目光触及，它们才被赋予了“存在”的意义。我们总是在追求永恒，但真正的美，往往存在于**按下回车键前那零点几秒的迟疑**。
+
+### 关于创造的碎碎念
+
+* **灵感**：不是抓取，而是邂逅。
+* **代码**：是逻辑的诗，是理性与浪漫的握手言和。
+* **交互**：当你看着屏幕时，屏幕也在观察这个世界的温度。
+
+> “在 0 与 1 的缝隙里，藏着人类所有的感性。”
+
+在这个快进的时代，慢下来看一段文字逐个蹦出，本身就是一种**数字时代的禅意**。不必急着读完，因为此时此刻，过程本身就是目的。
+
+---
+
+**希望这段文字在你的打字效果里，跳动得足够优雅。**
+
+### 给你的“极客”小建议：
+
+既然是做自动打字效果，你可以调整一下参数：
+
+1. **速度微调**：不要匀速，让字间距和速度有一点点随机感，更像人类在思考。
+2. **标点停留**：在逗号停留 200ms，句号停留 500ms，这样“呼吸感”会非常强。
+
+**需要我帮你把这段文字转换成适合代码调用的 JSON 格式，或者你想换个更热血、更科幻的主题？**
+	");
+}
+</script>
+<style>
+.text{ width: 1000px; height: 600px; background-color: #ECECEC; margin: 100px auto; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="text">
+
+
+
+</div>
+
+
+
+
+
+</body>
+</html>
